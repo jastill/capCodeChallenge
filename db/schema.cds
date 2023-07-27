@@ -6,15 +6,16 @@ using { managed } from '@sap/cds/common';
 entity Rounds : managed {
   key ID : UUID;
   title  : String(111);
-  holes  : Composition of Holes;
+  //holes  : Composition of Holes;
 }
 
 @assert.range
 entity Holes {
   key hole : Integer;
+  roundId: UUID;
   par : Integer;
   score : Integer;
-  shots : Composition of Shots;
+  //shots : Composition of Shots;
 }
 
 entity Shots {
