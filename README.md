@@ -23,3 +23,6 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
+# capCodeChallenge
+https://groups.community.sap.com/t5/application-development/sap-developer-challenge-sap-cloud-application-programming-model/td-p/271512
