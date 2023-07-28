@@ -1,11 +1,42 @@
+
+###
+GET http://localhost:4004/browse/Rounds?$expand=holes
+
+
+###
+POST http://localhost:4004/browse/Rounds
+Content-Type: application/json
+
+{
+  "title": "Round 2"
+}
+
+###
+POST http://localhost:4004/browse/Rounds
+Content-Type: application/json
+
+{
+  "title": "Round 3",
+  "holes": [
+    {
+    "hole":1,
+    "par": 3,
+    "score": 4
+  }
+  ]
+}
+
+
+###
 POST http://localhost:4004/browse/Holes
 Content-Type: application/json
 
 {
-  "hole":1,
   "par": 3,
-  "score": 5
+  "score": 4
 }
+
+
 
 ###
 GET http://localhost:4004/browse/Holes
@@ -19,13 +50,5 @@ Content-Type: application/json
 
 {
       "type": "Iron",
-      "value": 9
-}
-
-###
-POST http://localhost:4004/browse/Clubs
-Content-Type: application/json
-
-{
       "value": 9
 }

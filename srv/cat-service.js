@@ -3,24 +3,30 @@ class CatalogService extends cds.ApplicationService {
         const { Holes, Rounds } = this.entities
         this.before('CREATE', Holes, req => { 
             const score=req.data.score;
-            const par=req.data.par;
+            
+            if (score == 1) {
+                req.data.result = "hole in one";
 
-            const diff = score - par;
-            console.log("Result: "+diff);
+            } else {
+                const par=req.data.par;
 
-            const resultMap = new Map ([
-                ["-3","albatross"],
-                ["-2","eagle"],
-                ["-1","birdie"],
-                ["0","par"],
-                ["1","bogey"],
-                ["2","double bogey"],
-                ["3","triple bogey"]
-            ]);
-
-            const key = ""+diff;;
-
-            req.data.result = resultMap.get(key);;
+                const diff = score - par;
+    
+                const resultMap = new Map ([
+                    ["-3","albatross"],
+                    ["-2","eagle"],
+                    ["-1","birdie"],
+                    ["0","par"],
+                    ["1","bogey"],
+                    ["2","double bogey"],
+                    ["3","triple bogey"]
+                ]);
+    
+                const key = ""+diff;;
+    
+                req.data.result = resultMap.get(key);;
+            }
+            
 
             //return next();
         })
