@@ -1,7 +1,10 @@
 
 ###
-GET http://localhost:4004/browse/Rounds?$expand=holes
+GET http://localhost:4004/browse/Players
 
+
+###
+GET http://localhost:4004/browse/Rounds?$expand=holes
 
 ###
 POST http://localhost:4004/browse/Rounds
